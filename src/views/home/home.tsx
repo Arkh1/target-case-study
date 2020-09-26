@@ -2,9 +2,9 @@ import React, { FunctionComponent, useState, useEffect } from 'react';
 import axios from 'axios';
 import { createStyles, makeStyles, Theme  } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
-import Card from '@material-ui/core/Card';
-import CardContent from '@material-ui/core/CardContent';
+import Divider from '@material-ui/core/Divider';
 import Typography from '@material-ui/core/Typography';
+import Collapse from '@material-ui/core/Collapse';
 import { SelectRoute } from '../../components/selectRoute/selectRoute';
 import { SelectDirection } from '../../components/selectDirection/selectDirection';
 import { Stops } from '../../components/stops/stops';
@@ -13,12 +13,9 @@ import * as API from '../../utils/api';
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         form: {
-            padding: theme.spacing(1)
-        },
-        media: {
-            height: 140,
+            padding: theme.spacing(3)
         }
-    }),
+    })
 );
 
 export interface IHomeProps {}
@@ -59,20 +56,18 @@ export const Home: FunctionComponent<IHomeProps> = () => {
     };
 
     return (
-        <Paper>
-            <Card className={classes.form}>
-                <CardContent>
-                    <Typography align="center" gutterBottom variant="h5" component="h2">
-                        Real-time Departures
-                    </Typography>
-                    <SelectRoute handleChangeCb={onSelectRouteChange} data={routes} />
-                    { !!routeId && <SelectDirection handleChangeCb={onSelectDirectionChange} data={directions} /> }
-                    <Typography variant="body2" color="textSecondary" component="p">
-                        NexTrip does some cool stuff...  and stuff.
-                    </Typography>
-                </CardContent>
-            </Card>
-            { !!directionId && <Stops data={stops} /> }
+        <Paper className={classes.form}>
+            <Typography align="center" gutterBottom variant="h5" component="h2">
+                Stops by Route &amp; Direction.
+            </Typography>
+            <SelectRoute handleChangeCb={onSelectRouteChange} data={routes} />
+            <Collapse in={!!directions.length}>
+                <SelectDirection handleChangeCb={onSelectDirectionChange} data={directions} />
+            </Collapse>
+            <Collapse in={!!stops.length}>
+                <Divider variant="middle" />
+                <Stops data={stops} />
+            </Collapse>
         </Paper>
     );
 };

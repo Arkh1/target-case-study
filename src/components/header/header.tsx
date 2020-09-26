@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme: Theme) =>
         title: {
             flexGrow: 1,
         },
-    }),
+    })
 );
 
 export const Header: FunctionComponent<HeaderProps> = () => {

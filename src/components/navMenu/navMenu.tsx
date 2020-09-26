@@ -1,17 +1,26 @@
 import React, { FunctionComponent, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import MenuIcon from '@material-ui/icons/Menu';
 
-const useStyles = makeStyles({
-});
+const useStyles = makeStyles((theme: Theme) =>
+    createStyles({
+        menu: {
+            '& a': {
+                'text-decoration': 'none',
+                color: '#000'
+            }
+        }
+    }),
+);
 
 export interface INavMenuProps {}
 
 export const NavMenu: FunctionComponent<INavMenuProps> = () => {
+    const classes = useStyles();
     const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
 
     const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -33,6 +42,7 @@ export const NavMenu: FunctionComponent<INavMenuProps> = () => {
                 keepMounted
                 open={Boolean(anchorEl)}
                 onClose={handleClose}
+                className={classes.menu}
             >
                 <MenuItem onClick={handleClose}><Link to="/">Home</Link></MenuItem>
                 <MenuItem onClick={handleClose}><Link to="/about">About</Link></MenuItem>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { NavMenu } from './navMenu';
 
 export default {
@@ -6,4 +7,4 @@ export default {
     component: NavMenu,
 };
 
-export const base = () => <NavMenu />;
+export const base = () => <Router><NavMenu /></Router>;

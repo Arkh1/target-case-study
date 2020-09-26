@@ -7,7 +7,7 @@ export default {
 };
 
 const props = {
-    data: []
+    data: [{"Text":"NORTHBOUND","Value":"4"},{"Text":"SOUTHBOUND","Value":"1"}]
 };
 
 export const base = () => <SelectDirection { ...props } />;
