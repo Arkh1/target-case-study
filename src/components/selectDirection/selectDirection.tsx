@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState, useEffect } from 'react';
+import React, { FunctionComponent } from 'react';
 import MenuItem from '@material-ui/core/MenuItem';
 import { IDirection } from '../../types/index';
 import { SelectBase } from '../selectBase/selectBase';
