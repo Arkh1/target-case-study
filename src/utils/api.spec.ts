@@ -28,6 +28,9 @@ describe('api', () => {
     });
 
     describe('getStops', () => {
+        const routeId = '901';
+        const directionId = '2';
+
         it('should fetch stops successfully from the API', async () => {
             const response = {
                 data: [
@@ -40,7 +43,7 @@ describe('api', () => {
             };
 
             axios.get.mockImplementationOnce(() => Promise.resolve(response));
-            await expect(getStops()).resolves.toEqual(response);
+            await expect(getStops(routeId, directionId)).resolves.toEqual(response);
         });
 
         it('should throw an error if fetch fails', async () => {
@@ -50,7 +53,7 @@ describe('api', () => {
                 Promise.reject(new Error(errorMessage)),
             );
 
-            await expect(getStops()).rejects.toThrow(errorMessage);
+            await expect(getStops(routeId, directionId)).rejects.toThrow(errorMessage);
         });
     });
 });
