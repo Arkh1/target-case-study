@@ -3,7 +3,6 @@ import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import IconButton from '@material-ui/core/IconButton';
 import { NavMenu } from '../navMenu/navMenu';
 
 export interface HeaderProps {}
@@ -29,9 +28,7 @@ export const Header: FunctionComponent<HeaderProps> = () => {
         <header className={classes.root}>
             <AppBar position="static" color='primary'>
                 <Toolbar>
-                    <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-                        <NavMenu />
-                    </IconButton>
+                    <NavMenu />
                     <Typography variant="h6" className={classes.title}>
                         NexTrip Case Study
                     </Typography>

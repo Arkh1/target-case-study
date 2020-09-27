@@ -1,13 +1,16 @@
 import React, { FunctionComponent, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import MenuIcon from '@material-ui/icons/Menu';
 
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
+        menuButton: {
+            marginRight: theme.spacing(2),
+        },
         menu: {
             '& a': {
                 'text-decoration': 'none',
@@ -33,9 +36,9 @@ export const NavMenu: FunctionComponent<INavMenuProps> = () => {
 
     return (
         <nav>
-            <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
+            <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu" onClick={handleClick} aria-controls="simple-menu" aria-haspopup="true">
                 <MenuIcon />
-            </Button>
+            </IconButton>
             <Menu
                 id="menu"
                 anchorEl={anchorEl}

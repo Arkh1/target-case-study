@@ -49,6 +49,7 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 * More error and failure states would be added.
 * Could memoize or otherwise cache api requests.
 * Could launch the app with preact and lazy load react.
+* FE Logging would be added.
 
 ## Learn More
 

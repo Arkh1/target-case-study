@@ -12,7 +12,9 @@ const getStops = async (routeId: string, directionId: string) => {
         const url = `${STOPS_URL}/${routeId}/${directionId}${JSON_FORMAT_PARAM}`;
         return await axios.get(url);
     } catch (e) {
+        // TODO: Log failure to server.  Sentry or some equivalent.
         console.log(`Failed to fetch stops list. Error: ${e}`);
+        throw e;
     }
 };
 
@@ -21,7 +23,9 @@ const getDirections = async (routeId: string) => {
         const url = `${DIRECTIONS_URL}/${routeId}${JSON_FORMAT_PARAM}`;
         return await axios.get(url);
     } catch (e) {
+        // TODO: Log failure to server.  Sentry or some equivalent.
         console.log(`Failed to fetch directions list. Error: ${e}`);
+        throw e;
     }
 };
 
