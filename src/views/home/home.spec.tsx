@@ -24,6 +24,6 @@ describe('Home', () => {
             render(<Home />, container);
         });
 
-        // TODO: Assert something useful
+        test.todo('Assert something useful');
     });
 });

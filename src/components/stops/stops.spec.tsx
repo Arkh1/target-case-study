@@ -35,7 +35,7 @@ describe('Stops', () => {
             render(<Stops { ...DEFAULT_PROPS } />, container);
         });
 
-        // TODO: Assert something useful
+        test.todo('Assert something useful');
     });
 
     it("should not render if data is empty", () => {
@@ -43,6 +43,6 @@ describe('Stops', () => {
             render(<Stops data={[]} />, container);
         });
 
-        // TODO: Assert something useful
+        test.todo('Assert something useful');
     });
 });

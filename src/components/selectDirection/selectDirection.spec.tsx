@@ -27,7 +27,7 @@ describe('SelectDirection', () => {
             render(<SelectDirection { ...DEFAULT_PROPS } />, container);
         });
 
-        // TODO: Assert something useful
+        test.todo('Assert something useful');
     });
 
     it("should not render without data", () => {
@@ -35,7 +35,7 @@ describe('SelectDirection', () => {
             render(<SelectDirection data={[]} />, container);
         });
 
-        // TODO: Assert something useful
+        test.todo('Assert something useful');
     });
 
     it("should call passed in callback when selection is made", () => {
@@ -44,6 +44,6 @@ describe('SelectDirection', () => {
             render(<SelectDirection handleChangeCb={handleChange} data={DEFAULT_PROPS.data} />, container);
         });
 
-        // TODO: Assert something useful
+        test.todo('Assert something useful');
     });
 });

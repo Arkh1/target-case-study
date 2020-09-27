@@ -35,7 +35,7 @@ describe('SelectStop', () => {
             render(<SelectStop { ...DEFAULT_PROPS } />, container);
         });
 
-        // TODO: Assert something useful
+        test.todo('Assert something useful');
     });
 
     it("should not render without data", () => {
@@ -43,7 +43,7 @@ describe('SelectStop', () => {
             render(<SelectStop data={[]} />, container);
         });
 
-        // TODO: Assert something useful
+        test.todo('Assert something useful');
     });
 
     it("should call passed in callback when selection is made", () => {
@@ -52,6 +52,6 @@ describe('SelectStop', () => {
             render(<SelectStop handleChangeCb={handleChange} data={DEFAULT_PROPS.data} />, container);
         });
 
-        // TODO: Assert something useful
+        test.todo('Assert something useful');
     });
 });

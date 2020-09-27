@@ -25,6 +25,6 @@ describe('NavMenu', () => {
             render(<Router><NavMenu /></Router>, container);
         });
 
-        // TODO: Assert something useful
+        test.todo('Assert something useful');
     });
 });

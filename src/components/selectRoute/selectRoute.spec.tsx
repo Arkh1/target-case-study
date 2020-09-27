@@ -32,7 +32,7 @@ describe('SelectRoute', () => {
             render(<SelectRoute { ...DEFAULT_PROPS } />, container);
         });
 
-        // TODO: Assert something useful
+        test.todo('Assert something useful');
     });
 
     it("should not render without data", () => {
@@ -40,7 +40,7 @@ describe('SelectRoute', () => {
             render(<SelectRoute data={[]} />, container);
         });
 
-        // TODO: Assert something useful
+        test.todo('Assert something useful');
     });
 
     it("should call passed in callback when selection is made", () => {
@@ -49,6 +49,6 @@ describe('SelectRoute', () => {
             render(<SelectRoute handleChangeCb={handleChange} data={DEFAULT_PROPS.data} />, container);
         });
 
-        // TODO: Assert something useful
+        test.todo('Assert something useful');
     });
 });

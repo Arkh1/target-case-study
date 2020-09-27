@@ -33,7 +33,7 @@ describe('SelectBase', () => {
             render(<SelectBase label="" />, container);
         });
 
-        // TODO: Assert something useful
+        test.todo('Assert something useful');
     });
 
     it("should call passed in callback when selection is made", () => {
@@ -42,6 +42,6 @@ describe('SelectBase', () => {
             render(<SelectBase handleChangeCb={handleChange} label={DEFAULT_PROPS.label} />, container);
         });
 
-        // TODO: Assert something useful
+        test.todo('Assert something useful');
     });
 });
